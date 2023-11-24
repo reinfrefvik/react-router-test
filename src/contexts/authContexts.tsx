@@ -1,7 +1,12 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { useCookies } from 'react-cookie';
 
-const AuthContext = createContext("");
+interface AuthContextProps {
+    isAuthenticated: boolean;
+    isLoading: boolean;
+}
+
+const AuthContext = createContext<AuthContextProps | null>(null);  
 
 const AuthProvider = ({children}) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);

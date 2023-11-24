@@ -1,11 +1,9 @@
 import React, {useContext} from 'react';
-import { AuthContext } from './contexts/authContexts';
+import { AuthContext } from './contexts/authContexts.tsx';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import {Login} from './pages/login';
+import {LoginPage} from './pages/loginPage.js';
 import { Logout } from './pages/logout';
-
-const Home = () => <h1><Logout/></h1>;
-const About = () => <h1>About</h1>;
+import { About } from './pages/about.tsx';
 
 const Routers = () => {
     const {isAuthenticated, isLoading} = useContext(AuthContext);
@@ -18,7 +16,7 @@ const Routers = () => {
     if(!isAuthenticated) {
         return (
             <Routes>
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={<LoginPage />} />
                 <Route path="*" element={<Navigate replace to="/login" />} />
             </Routes>
         )
@@ -26,7 +24,7 @@ const Routers = () => {
 
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Logout />} />
             <Route path="about" element={<About />} />
             <Route path="*" element={<Navigate replace to="/" />} />
         </Routes> 

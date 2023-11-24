@@ -1,19 +1,12 @@
 import React from 'react';
-import { useCookies } from 'react-cookie';
+import { Page } from '../layout/page/page.tsx';
+import { Login } from '../components/login.js';
 
 const Logout = () => {
-    const [cookies, setCookie, removeCookie] = useCookies(['token']);
-
-    const onClickAction = () => {
-        if(!!cookies.token) {
-            removeCookie('token');
-        }
-
-    }
     return (
-        <div>
-            <button onClick={onClickAction}>Logout</button>
-        </div>
+        <>
+            <Page><Login/></Page>
+        </>
     )
 };
 

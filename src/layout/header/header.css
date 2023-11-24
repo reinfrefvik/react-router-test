@@ -1,0 +1,25 @@
+.Header {
+    background-color: white;
+    padding: 8px 24px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: rgb(7, 43, 77);
+    filter: drop-shadow(0 0 5px #00000050);
+  }
+
+.HeaderList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.HeaderList li {
+    float: left;
+    padding: 4px;
+}
