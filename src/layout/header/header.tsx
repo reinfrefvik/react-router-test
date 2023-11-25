@@ -1,4 +1,4 @@
-import { Login } from '../../components/login';
+import { Login } from '../../components/login.tsx';
 import './header.css';
 import React from 'react';
 import { BsFillPuzzleFill } from "react-icons/bs";

@@ -6,7 +6,10 @@ interface AuthContextProps {
     isLoading: boolean;
 }
 
-const AuthContext = createContext<AuthContextProps | null>(null);  
+const AuthContext = createContext<AuthContextProps>({
+    isAuthenticated: false,
+    isLoading: true
+});  
 
 const AuthProvider = ({children}) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
